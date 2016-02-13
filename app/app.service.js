@@ -1,9 +1,12 @@
 ;
-(function() {
-  'use strict';
 
   angular
     .module('gpApp')
-    .service();
+    .service('socialService', ['$http', function($http){
+        var baseURL = 'http://localhost:3000/users';
 
-})();
+        this.getUsers = function() {
+           return $http.get(baseURL);
+        };
+
+      }]);

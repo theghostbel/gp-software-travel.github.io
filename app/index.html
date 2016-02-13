@@ -6,19 +6,23 @@
   <!--build:css styles.min.css-->
 
   <!-- bower:css -->
-  <link rel="stylesheet" href="/bower_components/Materialize/bin/materialize.css">
+  <link rel="stylesheet" href="../bower_components/Materialize/bin/materialize.css">
   <!-- endinject -->
 
   <!-- inject:css -->
-  <link rel="stylesheet" href="/app/style.css">
+  <link rel="stylesheet" href="./style.css">
   <!-- endinject -->
 
   <!--endbuild-->
 </head>
 <body ng-app="gpApp">
+  <div ng-controller="socialController">
+    <div>Hi {{selectedUser.name}}</div>
+    <div>Age: {{selectedUser.age}}</div>
+    <div>Gender: {{selectedUser.gender}}</div>
+  </div>
 
   <!--build:js main.min.js -->
-
   <!-- bower:js -->
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/bower_components/jquery/dist/jquery.js"></script>
@@ -27,9 +31,10 @@
   <!-- endinject -->
 
   <!-- inject:js -->
-  <script src="/app/app.controller.js"></script>
-  <script src="/app/app.module.js"></script>
-  <script src="/app/app.service.js"></script>
+  <script src="./app.module.js"></script>
+  <script src="./app.service.js"></script>
+  <script src="./app.controller.js"></script>
+
   <!-- endinject -->
   
   <!-- endbuild -->
