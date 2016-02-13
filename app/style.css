@@ -1,6 +1,52 @@
+body{
+	font-size: 20px;
+}
 .wrapper{
 	max-width: 320px;
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
+}
+nav .button-collapse i {
+	font-size: 3.7rem;
+
+}
+.avatar img{
+	width: 160px;
+	border-radius: 50%;
+}
+.avatar{
+	margin-top: 10px;
+}
+input[type=text]{
+	line-height: 2.5rem;
+	width: 90%;
+	font-size: 20px;
+	text-align: center;
+}
+form{
+	width: 90%;
+	margin:0 auto;
+}
+.collapsible-body p {
+	padding: 1rem;
+}
+.tooltip-save{
+	position: absolute;
+	top: 30%;
+	left: 41%;
+	opacity: 0;
+	color: #1976D2;
+	transition: all 0.5s ease;
+}
+.tooltip-save.open{
+	opacity: 1;
+	top:125%;
+}
+.btn-submit{
+	position: relative;
+}
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label{
+	font-size: 18px;
 }
