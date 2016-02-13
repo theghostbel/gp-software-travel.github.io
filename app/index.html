@@ -16,10 +16,22 @@
   <!--endbuild-->
 </head>
 <body ng-app="gpApp">
-  <div ng-controller="socialController">
-    <div>Hi {{selectedUser.name}}</div>
-    <div>Age: {{selectedUser.age}}</div>
-    <div>Gender: {{selectedUser.gender}}</div>
+  <div class="container">
+    <div ng-controller="socialController">
+      <div>
+        Hi <input type="text" ng-model="selectedUser.name">
+      </div>
+      <div>
+        Age: <input type="text" ng-model="selectedUser.age">
+      </div>
+      <div>
+        Gender: <input type="radio" ng-model="selectedUser.gender" value="male" checked> male
+        <input type="radio" ng-model="selectedUser.gender" value="female"> female
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action" onclick="updateUser()">
+        Submit
+      </button>
+    </div>
   </div>
 
   <!--build:js main.min.js -->

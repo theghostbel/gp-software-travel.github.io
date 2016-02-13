@@ -5,21 +5,21 @@
       "name": "Name0",
       "image": "userpic0.png",
       "age": "10",
-      "gender": "man"
+      "gender": "male"
     },
     {
       "id": 1,
       "name": "Name1",
       "image": "userpic1.png",
       "age": "11",
-      "gender": "man"
+      "gender": "male"
     },
     {
       "id": 2,
       "name": "Name2",
       "image": "userpic2.png",
       "age": "12",
-      "gender": "woman"
+      "gender": "female"
     }
   ]
 }
