@@ -10,27 +10,43 @@
   <!-- endinject -->
 
   <!-- inject:css -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../style.css">
   <!-- endinject -->
 
   <!--endbuild-->
 </head>
 <body ng-app="gpApp">
-  <div class="container">
+<div class="wrapper ">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="http://www.pizza.by/" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>      
+      </div>
+    </nav>
     <div ng-controller="socialController">
-      <div>
-        Hi <input type="text" ng-model="selectedUser.name">
-      </div>
-      <div>
-        Age: <input type="text" ng-model="selectedUser.age">
-      </div>
-      <div>
-        Gender: <input type="radio" ng-model="selectedUser.gender" value="male" checked> male
-        <input type="radio" ng-model="selectedUser.gender" value="female"> female
-      </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action" onclick="updateUser()">
-        Submit
-      </button>
+    <span class="center-align">Круглое фото</span> <br>
+    <span class="center-align">Hi, {{selectedUser.name}}</span>
+    <form class="" action="#">
+      <ul>
+        <li><a href="">Age:</a>
+          <div>
+            <input  id="age-person" type="text" class="validate" ng-model="selectedUser.age" value="{{selectedUser.age}}">
+          </div>      
+        </li>
+        <li><a href="">Gender:</a>
+          <div>
+            <p>
+              <input class="with-gap " name="group1" type="radio" id="radio1" ng-model="selectedUser.gender" value="Male" checked/>
+              <label for="radio1">Male</label>
+            </p>
+            <p>
+              <input class="with-gap" name="group1" type="radio" id="radio2" ng-model="selectedUser.gender" value="Female"  />
+              <label for="radio2">Female</label>
+            </p>
+          </div>    
+        </li>
+      </ul>
+      <button class="btn waves-effect waves-light" type="submit" name="action" onclick="updateUser()">Save</button>
+    </form>
     </div>
   </div>
 
@@ -43,9 +59,9 @@
   <!-- endinject -->
 
   <!-- inject:js -->
-  <script src="./app.module.js"></script>
-  <script src="./app.service.js"></script>
-  <script src="./app.controller.js"></script>
+  <script src="../app.module.js"></script>
+  <script src="../app.service.js"></script>
+  <script src="../app.controller.js"></script>
 
   <!-- endinject -->
   
