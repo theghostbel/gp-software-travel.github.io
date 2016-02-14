@@ -12,17 +12,14 @@
 
     vm.updateUser = updateUser;
     vm.showAnimation = false;
-    vm.saveChanges = saveChanges;
-
-    $scope.$watchCollection('social.user', function() {
-      saveChanges();
-    });
 
     socialService.getUser().then(successCallbackGet, errorCallback);
 
     function updateUser() {
       vm.showAnimation = true;
       vm.isDisabled = true;
+
+      vm.editForm.$setPristine();
 
       $timeout(function() {
         vm.showAnimation = !vm.showAnimation;
@@ -33,9 +30,11 @@
 
     function successCallbackGet(response) {
       vm.user = response.data[userID];
+      console.log('successCallbackGet:', vm.user);
     }
 
     function successCallbackPut(response) {
+      console.log('successCallbackPut:', response.data);
       return response.data;
     }
 
@@ -43,12 +42,5 @@
       return "Error: " + response.status + " " + response.statusText;
     }
 
-    function saveChanges() {
-      if (vm.editForm.$dirty) {
-        vm.isDisabled = false;
-      } else {
-        vm.isDisabled = true;
-      }
-    }
   }
 })();
