@@ -37,8 +37,8 @@
            </div> 
          </li>     
 
-         <li>
-           <div class="collapsible-header">Gender: {{social.user.gender}}</div>
+         <li ng-class="{active: social.showAnimation}">
+           <div class="collapsible-header" ng-class="{active: social.showAnimation}">Gender: {{social.user.gender}}</div>
            <div class="sub collapsible-body">              
              <p>
                <input class="with-gap" name="group1" type="radio" id="radio1" ng-model="social.user.gender" value="Male"/>
@@ -52,7 +52,7 @@
          </li>          
        </ul>
        <div class="btn-submit">
-         <button class="btn waves-effect waves-light blue darken-2 z-depth-3" ng-click="social.updateUser()" ng-disabled="social.saveChanges()">Save</button>
+         <button class="btn waves-effect waves-light blue darken-2 z-depth-3" ng-click="social.updateUser()" ng-disabled="social.isDisabled">Save</button>
          <span class="tooltip-save" ng-class="{open: social.showAnimation}">Saved !</span>
        </div>
      </form>

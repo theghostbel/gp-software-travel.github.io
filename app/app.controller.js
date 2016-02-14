@@ -5,7 +5,7 @@
   angular.module('gpApp')
     .controller('socialController', socialController);
 
-  function socialController(socialService, $timeout) {
+  function socialController($scope, socialService, $timeout) {
 
     var vm = this;
     var userID = 1;
@@ -14,10 +14,15 @@
     vm.showAnimation = false;
     vm.saveChanges = saveChanges;
 
+    $scope.$watchCollection('social.user', function() {
+      saveChanges();
+    });
+
     socialService.getUser().then(successCallbackGet, errorCallback);
 
     function updateUser() {
       vm.showAnimation = true;
+      vm.isDisabled = true;
 
       $timeout(function() {
         vm.showAnimation = !vm.showAnimation;
@@ -38,11 +43,11 @@
       return "Error: " + response.status + " " + response.statusText;
     }
 
-    function saveChanges(bool) {
+    function saveChanges() {
       if (vm.editForm.$dirty) {
-        return false;
+        vm.isDisabled = false;
       } else {
-        return true;
+        vm.isDisabled = true;
       }
     }
   }
