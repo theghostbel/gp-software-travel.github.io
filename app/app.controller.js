@@ -3,34 +3,30 @@
   'use strict';
 
   angular.module('gpApp')
-    .controller('socialController', ['$scope', 'socialService', function($scope, socialService) {
+    .controller('socialController', socialController);
 
-      $scope.selectedUser = {
-        name: '',
-        age: '',
-        userpic: '',
-        gender: ''
-      };
+  function socialController(socialService) {
 
-      socialService.getUsers().then(successCallback, errorCallback);
+    var vm = this;
 
-      function successCallback(response) {
-        $scope.selectedUser = response.data;
+    socialService.getUser().then(successCallback, errorCallback);
+
+    function successCallback(response) {
+      vm.user = response.data;
+    }
+
+    function errorCallback(response) {
+      return "Error: " + response.status + " " + response.statusText;
+    }
+
+    vm.updateUser = function updateUser() {
+      var data = {};
+
+      for (var key in vm.user) {
+        data[key] = vm.user[key];
       }
 
-      function errorCallback(response) {
-        return "Error: " + response.status + " " + response.statusText;
-      }
-
-      $scope.updateUser = function updateUser() {
-        var data = {};
-        data.name = $scope.selectedUser.name;
-        data.age = $scope.selectedUser.age;
-        data.image = $scope.selectedUser.image;
-        data.gender = $scope.selectedUser.gender;
-
-        socialService.setUser(data);
-      }
-
-    }]);
+      socialService.setUser(data);
+    }
+  }
 })();

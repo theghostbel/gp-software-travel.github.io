@@ -2,9 +2,9 @@
   "user": [
     {
       "name": "John",
-      "age": 22,
+      "age": 40,
       "image": "avatar.jpg",
-      "gender": "Female",
+      "gender": "Male",
       "id": 0
     }
   ]

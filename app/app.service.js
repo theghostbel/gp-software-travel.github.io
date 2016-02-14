@@ -5,7 +5,7 @@
     .service('socialService', ['$http', function($http) {
       var baseURL = 'http://localhost:3000/user/0';
 
-      this.getUsers = function() {
+      this.getUser = function() {
         return $http.get(baseURL);
       };
 

@@ -12,5 +12,3 @@ Development guide
   install: npm install json-server -g
   
   run: json-server person.json
-  
-  

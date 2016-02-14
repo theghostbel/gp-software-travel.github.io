@@ -23,17 +23,17 @@
         <a href="http://www.pizza.by/" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>      
       </div>
     </nav>
-    <div ng-controller="socialController">
+    <div ng-controller="socialController as social">
       <div class="avatar">
-        <img ng-src="{{selectedUser.image}}" alt="best_avatar" class="z-depth-2">
+        <img ng-src="{{social.user.image}}" alt="best_avatar" class="z-depth-2">
       </div> <br>
-      <span class="center-align">Hi, {{selectedUser.name}}</span>
+      <span class="center-align">Hi, {{social.user.name}}</span>
       <form class="">
         <ul class="collapsible">
           <li>
             <div class="collapsible-header">Age:</div>
             <div class="sub collapsible-body">
-             <input  id="age-person" type="text" class="validate" ng-model="selectedUser.age" value="{{selectedUser.age}}">
+             <input  id="age-person" type="text" class="validate" ng-model="social.user.age" value="{{social.user.age}}">
            </div> 
          </li>     
 
@@ -41,18 +41,18 @@
            <div class="collapsible-header">Gender:</div>
            <div class="sub collapsible-body">              
              <p>
-               <input class="with-gap" name="group1" type="radio" id="radio1" ng-model="selectedUser.gender" value="Male" ng-checked="true" />
+               <input class="with-gap" name="group1" type="radio" id="radio1" ng-model="social.user.gender" value="Male"/>
                <label for="radio1">Male</label>
              </p>
              <p>
-               <input class="with-gap" name="group1" type="radio" id="radio2" ng-model="selectedUser.gender" value="Female"  />
+               <input class="with-gap" name="group1" type="radio" id="radio2" ng-model="social.user.gender" value="Female"/>
                <label for="radio2">Female</label>
              </p>
            </div>
          </li>          
        </ul>
        <div class="btn-submit">
-         <button class="btn waves-effect waves-light blue darken-2 z-depth-3" ng-click="updateUser()">Save</button>
+         <button class="btn waves-effect waves-light blue darken-2 z-depth-3" ng-click="social.updateUser()">Save</button>
          <span class="tooltip-save" ng-class="">Saved !</span>
        </div>
      </form>
