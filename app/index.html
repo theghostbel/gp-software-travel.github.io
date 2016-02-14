@@ -17,18 +17,18 @@
   <!--endbuild-->
 </head>
 <body ng-app="gpApp">
-  <div class="wrapper ">
+  <div class="wrapper">
     <nav>
-      <div class="nav-wrapper  blue darken-3 z-depth-1">
+      <div class="nav-wrapper blue darken-3 z-depth-1">
         <a href="http://www.pizza.by/" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>      
       </div>
     </nav>
     <div ng-controller="socialController">
       <div class="avatar">
-        <img src="avatar.jpg" alt="best_avatar" class="z-depth-2">
+        <img ng-src="{{selectedUser.image}}" alt="best_avatar" class="z-depth-2">
       </div> <br>
       <span class="center-align">Hi, {{selectedUser.name}}</span>
-      <form class="" action="#">
+      <form class="">
         <ul class="collapsible">
           <li>
             <div class="collapsible-header">Age:</div>
@@ -52,8 +52,8 @@
          </li>          
        </ul>
        <div class="btn-submit">
-         <button class="btn waves-effect waves-light blue darken-2 z-depth-3" type="submit" name="action" onclick="updateUser()" >Save</button>
-         <span class="tooltip-save" ng-class="" >Saved !</span>
+         <button class="btn waves-effect waves-light blue darken-2 z-depth-3" ng-click="updateUser()">Save</button>
+         <span class="tooltip-save" ng-class="">Saved !</span>
        </div>
      </form>
    </div>
@@ -71,7 +71,6 @@
  <script src="./app.module.js"></script>
  <script src="./app.service.js"></script>
  <script src="./app.controller.js"></script>
-
  <!-- endinject -->
 
  <!-- endbuild -->

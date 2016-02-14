@@ -1,0 +1,11 @@
+{
+  "user": [
+    {
+      "name": "John",
+      "age": 22,
+      "image": "avatar.jpg",
+      "gender": "Female",
+      "id": 0
+    }
+  ]
+}
