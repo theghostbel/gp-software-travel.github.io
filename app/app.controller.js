@@ -10,20 +10,25 @@
     var vm = this;
     var userID = 1;
 
-    socialService.getUser().then(successCallback, errorCallback);
+    socialService.getUser().then(successCallbackGet, errorCallback);
 
-    function successCallback(response) {
+    vm.updateUser = function updateUser() {
+        var data = vm.user;
+        console.log('update', vm.user);
+        socialService.setUser(userID, data).then(successCallbackPut, errorCallback);
+    };
+
+
+    function successCallbackGet(response) {
       vm.user = response.data[userID];
+    }
+
+    function successCallbackPut(response) {
+      return response.data;
     }
 
     function errorCallback(response) {
       return "Error: " + response.status + " " + response.statusText;
-    }
-
-    vm.updateUser = function updateUser() {
-
-      var data = vm.user;
-      socialService.setUser(userID, data);
     }
   }
 })();
