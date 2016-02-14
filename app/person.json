@@ -1,11 +1,25 @@
 {
-  "user": [
+  "users": [
     {
       "name": "John",
       "age": 40,
       "image": "avatar.jpg",
       "gender": "Male",
       "id": 0
+    },
+    {
+      "name": "John1",
+      "age": 41,
+      "image": "avatar.jpg",
+      "gender": "Male",
+      "id": 1
+    },
+    {
+      "name": "Joan2",
+      "age": 42,
+      "image": "avatar.jpg",
+      "gender": "Female",
+      "id": 2
     }
   ]
 }

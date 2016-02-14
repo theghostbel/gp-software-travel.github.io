@@ -8,11 +8,12 @@
   function socialController(socialService) {
 
     var vm = this;
+    var userID = 1;
 
     socialService.getUser().then(successCallback, errorCallback);
 
     function successCallback(response) {
-      vm.user = response.data;
+      vm.user = response.data[userID];
     }
 
     function errorCallback(response) {
@@ -20,13 +21,9 @@
     }
 
     vm.updateUser = function updateUser() {
-      var data = {};
 
-      for (var key in vm.user) {
-        data[key] = vm.user[key];
-      }
-
-      socialService.setUser(data);
+      var data = vm.user;
+      socialService.setUser(userID, data);
     }
   }
 })();
