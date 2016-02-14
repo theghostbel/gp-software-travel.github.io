@@ -5,17 +5,24 @@
   angular.module('gpApp')
     .controller('socialController', socialController);
 
-  function socialController(socialService) {
+  function socialController(socialService, $timeout) {
 
     var vm = this;
     var userID = 1;
 
+    vm.updateUser = updateUser;
+    vm.showAnimation = false;
+
     socialService.getUser().then(successCallbackGet, errorCallback);
 
-    vm.updateUser = function updateUser() {
-        var data = vm.user;
-        console.log('update', vm.user);
-        socialService.setUser(userID, data).then(successCallbackPut, errorCallback);
+    function updateUser() {
+      vm.showAnimation = true;
+
+      $timeout(function() {
+        vm.showAnimation = !vm.showAnimation;
+      }, 2000);
+
+      socialService.setUser(userID, vm.user).then(successCallbackPut, errorCallback);
     };
 
 
