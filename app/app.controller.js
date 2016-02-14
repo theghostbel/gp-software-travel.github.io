@@ -12,6 +12,7 @@
 
     vm.updateUser = updateUser;
     vm.showAnimation = false;
+    vm.saveChanges = saveChanges;
 
     socialService.getUser().then(successCallbackGet, errorCallback);
 
@@ -25,7 +26,6 @@
       socialService.setUser(userID, vm.user).then(successCallbackPut, errorCallback);
     };
 
-
     function successCallbackGet(response) {
       vm.user = response.data[userID];
     }
@@ -36,6 +36,14 @@
 
     function errorCallback(response) {
       return "Error: " + response.status + " " + response.statusText;
+    }
+
+    function saveChanges(bool) {
+      if (vm.editForm.$dirty) {
+        return false;
+      } else {
+        return true;
+      }
     }
   }
 })();
