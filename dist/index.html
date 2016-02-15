@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Social Network</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.min.css">
+</head>
+<body ng-app="gpApp">
+  <div class="wrapper">
+    <nav>
+      <div class="nav-wrapper blue darken-3 z-depth-1">
+        <a href="http://www.pizza.by/" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>      
+      </div>
+    </nav>
+    <div ng-controller="socialController as social">
+      <div class="avatar">
+        <img ng-src="{{social.user.image}}" alt="best_avatar" class="z-depth-2">
+      </div> <br>
+      <span class="center-align">Hi, {{social.user.name}}</span>
+      <form name="social.editForm" class="">
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header">Age: {{social.user.age}}</div>
+            <div class="sub collapsible-body">
+              <input name="age" id="age-person" type="text" class="validate" ng-model="social.user.age" pattern="[0-9]*"
+                    value="{{social.user.age}}">
+            </div>
+         </li>     
+
+         <li ng-class="{active: social.showAnimation}">
+           <div class="collapsible-header" ng-class="{active: social.showAnimation}">Gender: {{social.user.gender}}</div>
+           <div class="sub collapsible-body">              
+             <p>
+               <input class="with-gap" name="group1" type="radio" id="radio1" ng-model="social.user.gender" value="Male"/>
+               <label for="radio1">Male</label>
+             </p>
+             <p>
+               <input class="with-gap" name="group2" type="radio" id="radio2" ng-model="social.user.gender" value="Female"/>
+               <label for="radio2">Female</label>
+             </p>
+           </div>
+         </li>          
+       </ul>
+       <div class="btn-submit">
+         <button class="btn waves-effect waves-light blue darken-2 z-depth-3" ng-click="social.updateUser()"
+                 ng-disabled="social.editForm.$pristine || social.editForm.$invalid">Save</button>
+         <span class="tooltip-save" ng-class="{open: social.showAnimation}">Saved !</span>
+       </div>
+     </form>
+   </div>
+ </div>
+
+ <script src="main.min.js"></script>
+</body>
+</html>
