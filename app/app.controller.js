@@ -17,16 +17,14 @@
 
     function updateUser() {
       vm.showAnimation = true;
-      vm.isDisabled = true;
-
-      vm.editForm.$setPristine();
+      $scope.editForm.$setPristine();
 
       $timeout(function() {
         vm.showAnimation = !vm.showAnimation;
       }, 2000);
 
       socialService.setUser(userID, vm.user).then(successCallbackPut, errorCallback);
-    };
+    }
 
     function successCallbackGet(response) {
       vm.user = response.data[userID];
