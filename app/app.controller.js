@@ -17,7 +17,7 @@
 
     function updateUser() {
       vm.showAnimation = true;
-      $scope.editForm.$setPristine();
+      vm.editForm.$setPristine();
 
       $timeout(function() {
         vm.showAnimation = !vm.showAnimation;
