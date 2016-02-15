@@ -18,7 +18,7 @@ nav .button-collapse i {
 .avatar{
 	margin-top: 10px;
 }
-input[type=number]{
+input[type=text]{
 	line-height: 2.5rem;
 	width: 90%;
 	font-size: 20px;
