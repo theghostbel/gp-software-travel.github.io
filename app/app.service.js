@@ -3,14 +3,14 @@
   angular
     .module('gpApp')
     .service('socialService', ['$http', function($http) {
-      var baseURL = 'http://localhost:3000/users';
+      var baseURL = 'http://fathomless-everglades-3680.herokuapp.com/api/user/2';
 
       this.getUser = function() {
         return $http.get(baseURL);
       };
 
-      this.setUser = function(id, data) {
-        return $http.put(baseURL + "/" + id, data);
+      this.setUser = function(data) {
+        return $http.post(baseURL, data);
       };
     }]);
 })();

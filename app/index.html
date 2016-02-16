@@ -25,16 +25,16 @@
     </nav>
     <div ng-controller="socialController as social">
       <div class="avatar">
-        <img ng-src="{{social.user.image}}" alt="best_avatar" class="z-depth-2">
+        <img ng-src="{{social.user.avatar}}" alt="best_avatar" class="z-depth-2">
       </div> <br>
-      <span class="center-align">Hi, {{social.user.name}}</span>
+      <span class="center-align">Hi, {{social.user.firstName + ' ' + social.user.lastName}}</span>
       <form name="social.editForm" class="">
         <ul class="collapsible">
           <li>
             <div class="collapsible-header">Age: {{social.user.age}}</div>
             <div class="sub collapsible-body">
               <input name="age" id="age-person" type="text" class="validate" ng-model="social.user.age" pattern="[0-9]*"
-                    value="{{social.user.age}}">
+                   >
             </div>
          </li>     
 
@@ -42,11 +42,11 @@
            <div class="collapsible-header" ng-class="{active: social.showAnimation}">Gender: {{social.user.gender}}</div>
            <div class="sub collapsible-body">              
              <p>
-               <input class="with-gap" name="group1" type="radio" id="radio1" ng-model="social.user.gender" value="Male"/>
+               <input class="with-gap" name="group1" type="radio" id="radio1" ng-model="social.user.gender" value="M"/>
                <label for="radio1">Male</label>
              </p>
              <p>
-               <input class="with-gap" name="group2" type="radio" id="radio2" ng-model="social.user.gender" value="Female"/>
+               <input class="with-gap" name="group2" type="radio" id="radio2" ng-model="social.user.gender" value="F"/>
                <label for="radio2">Female</label>
              </p>
            </div>

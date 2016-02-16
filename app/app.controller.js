@@ -10,6 +10,14 @@
     var vm = this;
     var userID = 1;
 
+    // vm.user = {
+    //   avatar: "123",
+    //   firstName: "Jis",
+    //   lastName: 'As',
+    //   age: 18,
+    //   gender: ['F']
+    // }
+
     vm.updateUser = updateUser;
     vm.showAnimation = false;
 
@@ -22,12 +30,12 @@
       $timeout(function() {
         vm.showAnimation = !vm.showAnimation;
       }, 2000);
-
-      socialService.setUser(userID, vm.user).then(successCallbackPut, errorCallback);
+      console.log(vm.user)
+      socialService.setUser(vm.user).then(successCallbackPut, errorCallback);
     }
 
     function successCallbackGet(response) {
-      vm.user = response.data[userID];
+      vm.user = response.data;
       console.log('successCallbackGet:', vm.user);
     }
 
