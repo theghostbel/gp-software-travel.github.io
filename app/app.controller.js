@@ -19,16 +19,16 @@
     // }
 
     vm.updateUser = updateUser;
-    vm.showAnimation = false;
+    vm.processingAnimate = false;
 
     socialService.getUser().then(successCallbackGet, errorCallback);
 
     function updateUser() {
-      vm.showAnimation = true;
+      vm.processingAnimate = true;
       vm.editForm.$setPristine();
 
       $timeout(function() {
-        vm.showAnimation = !vm.showAnimation;
+        vm.processingAnimate = !vm.processingAnimate;
       }, 2000);
       console.log(vm.user)
       socialService.setUser(vm.user).then(successCallbackPut, errorCallback);
