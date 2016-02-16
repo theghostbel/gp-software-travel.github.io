@@ -3,9 +3,9 @@
   'use strict';
 
   angular.module('gpApp')
-    .controller('socialController', socialController);
+    .controller('profileController', profileController);
 
-  function socialController($scope, socialService, $timeout) {
+  function profileController($scope, profileService, $timeout) {
 
     var vm = this;
     var userID = 1;
@@ -21,17 +21,18 @@
     vm.updateUser = updateUser;
     vm.processingAnimate = false;
 
-    socialService.getUser().then(successCallbackGet, errorCallback);
+    profileService.getUser().then(successCallbackGet, errorCallback);
 
     function updateUser() {
       vm.processingAnimate = true;
       vm.editForm.$setPristine();
+      vm.user.age = parseInt(vm.user.age);
 
       $timeout(function() {
         vm.processingAnimate = !vm.processingAnimate;
       }, 2000);
       console.log(vm.user)
-      socialService.setUser(vm.user).then(successCallbackPut, errorCallback);
+      profileService.setUser(vm.user).then(successCallbackPut, errorCallback);
     }
 
     function successCallbackGet(response) {

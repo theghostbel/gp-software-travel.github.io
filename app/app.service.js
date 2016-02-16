@@ -2,7 +2,7 @@
 (function() {
   angular
     .module('gpApp')
-    .service('socialService', ['$http', function($http) {
+    .service('profileService', ['$http', function($http) {
       var baseURL = 'http://fathomless-everglades-3680.herokuapp.com/api/user/2';
 
       this.getUser = function() {
