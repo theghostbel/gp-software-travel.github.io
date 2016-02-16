@@ -8,11 +8,12 @@
       "id": 0
     },
     {
-      "name": "John1",
-      "age": 40,
-      "image": "avatar.jpg",
-      "gender": "Female",
-      "id": 1
+      "firstName": "Joan2",
+      "lastName": "Smith",
+      "avatar": "avatar.jpg",
+      "gender": ["f"],
+      "id": 1,
+      "age": 6
     },
     {
       "name": "Joan2",
