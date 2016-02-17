@@ -25,6 +25,7 @@
           .state('profile', {
             url: '/profile',
             views: {
+              'navbar@': {},
               'content@': {
                 templateUrl: 'profile/profile.html',
                 controller: 'profileController',
