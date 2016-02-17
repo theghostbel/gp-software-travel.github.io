@@ -73,7 +73,7 @@ gulp.task('watch', ['browser-sync'], function() {
 gulp.task('browser-sync', ['default'], function () {
     var files = [
         'app/**/*.html',
-        'app/scripts/**/*.js',
+        'app/**/*.js',
         'dist/**/*',
         'bower_components/**/*',
    ];
