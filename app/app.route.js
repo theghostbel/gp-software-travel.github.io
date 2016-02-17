@@ -9,7 +9,7 @@
 
         .state('login', {
           url: '/',
-          //controller: 'loginController',
+          //controller: 'loginPageController',
           views: {
             'navbar': {
               templateUrl: 'navbar/navbar.html',
@@ -22,18 +22,23 @@
           }
         })
 
-          //.state('app', {
-          //      url: '/',
-          //      templateUrl: './login/login.html',
-            //    controller: 'loginController'
-           // })
+          .state('profile', {
+            url: '/profile',
+            views: {
+              'content@': {
+                templateUrl: 'profile/profile.html',
+                controller: 'profileController',
+                controllerAs: 'profile'
+              }
+            }
+          });
 
-        .state('profile', {
+      /*  .state('profile', {
           url: '/profile',
           templateUrl: './profile/profile.html',
           controller: 'profileController',
           controllerAs: 'profile'
-        });
+        });*/
 
       $urlRouterProvider.otherwise("/");
     });
