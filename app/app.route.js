@@ -8,7 +8,7 @@
       $stateProvider
         .state('profile', {
           url: '/',
-          templateUrl: '/profile/profile.html',
+          templateUrl: './profile/profile.html',
           controller: 'profileController',
           controllerAs: 'profile'
         })
