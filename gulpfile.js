@@ -66,7 +66,7 @@ gulp.task('watch', ['browser-sync'], function() {
   // Watch .js files
   gulp.watch('{app/**/*.js,app/**/*.css,app/**/*.html}', ['usemin']);
       // Watch image files
-  gulp.watch('app/**/*', ['imagemin']);
+  gulp.watch('app/images/**/*', ['imagemin']);
 
 });
 
