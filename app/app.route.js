@@ -33,12 +33,31 @@
             }
           });
 
-      /*  .state('profile', {
-          url: '/profile',
-          templateUrl: './profile/profile.html',
-          controller: 'profileController',
-          controllerAs: 'profile'
-        });*/
+  /*      $stateProvider
+    .state('app', {
+      url: '',
+      controller: 'AppCtrl',
+      views: {
+        'navbar': {
+          templateUrl: 'js/core/templates/navbar.tpl.html',
+          controller: 'NavbarCtrl'
+        },
+        'main': {
+          templateUrl: 'js/core/templates/main.tpl.html'
+        }
+      }
+    })
+
+    .state('app.home', {
+      url: '/home',
+      templateUrl: 'js/main/templates/home.tpl.html',
+      controller: 'HomeCtrl'
+    })
+    .state('app.about', {
+      url: '/about',
+      templateUrl: 'js/main/templates/about.tpl.html',
+      controller: 'AboutCtrl'
+    })*/
 
       $urlRouterProvider.otherwise("/");
     });
