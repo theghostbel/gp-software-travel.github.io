@@ -9,7 +9,8 @@
 
           .state('app', {
                 url: '/',
-                template: '<h2> It is the main page </h2>'
+                templateUrl: './login/login.html',
+                controller: 'loginController'
             })
 
         .state('profile', {
