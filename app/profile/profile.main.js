@@ -3,4 +3,4 @@ $('#age-person').bind("change keyup input click", function() {
         this.value = this.value.replace(/[^0-9]/g, '');
     }
 });
-$(".button-collapse").sideNav();
+//$(".button-collapse").sideNav();

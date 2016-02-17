@@ -10,7 +10,8 @@
 
         function NavbarController($scope, $state){
             var vm = this;
-            $scope.navbar = 'Hi, User! Find NavBar here';
+
+            $(".button-collapse").sideNav();
 
         }
 

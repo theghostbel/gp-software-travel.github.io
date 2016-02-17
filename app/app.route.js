@@ -11,10 +11,7 @@
           url: '/',
           //controller: 'loginPageController',
           views: {
-            'navbar': {
-              templateUrl: 'navbar/navbar.html',
-              controller: 'NavbarController'
-            },
+            'navbar': {},
             'content': {
               templateUrl: 'login/login.html',
               controller: 'loginController'
@@ -25,7 +22,10 @@
           .state('profile', {
             url: '/profile',
             views: {
-              'navbar@': {},
+              'navbar@': {
+                templateUrl: 'navbar/navbar.html',
+                controller: 'NavbarController'
+              },
               'content@': {
                 templateUrl: 'profile/profile.html',
                 controller: 'profileController',
