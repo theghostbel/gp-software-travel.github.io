@@ -64,9 +64,9 @@ gulp.task('copyfonts', ['clean'], function() {
 // Watch
 gulp.task('watch', ['browser-sync'], function() {
   // Watch .js files
-  gulp.watch('{app/scripts/**/*.js,app/styles/**/*.css,app/**/*.html}', ['usemin']);
+  gulp.watch('{app/**/*.js,app/**/*.css,app/**/*.html}', ['usemin']);
       // Watch image files
-  gulp.watch('app/images/**/*', ['imagemin']);
+  gulp.watch('app/**/*', ['imagemin']);
 
 });
 
