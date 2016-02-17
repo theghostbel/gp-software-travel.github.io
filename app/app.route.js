@@ -7,11 +7,26 @@
     .config(function($stateProvider, $urlRouterProvider) {
       $stateProvider
 
-          .state('app', {
-                url: '/',
-                templateUrl: './login/login.html',
-                controller: 'loginController'
-            })
+        .state('login', {
+          url: '/',
+          //controller: 'loginController',
+          views: {
+            'navbar': {
+              templateUrl: 'navbar/navbar.html',
+              controller: 'NavbarController'
+            },
+            'content': {
+              templateUrl: 'login/login.html',
+              controller: 'loginController'
+            }
+          }
+        })
+
+          //.state('app', {
+          //      url: '/',
+          //      templateUrl: './login/login.html',
+            //    controller: 'loginController'
+           // })
 
         .state('profile', {
           url: '/profile',

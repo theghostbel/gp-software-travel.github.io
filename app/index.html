@@ -13,7 +13,8 @@
 </head>
 <body ng-app="gpApp" ng-cloak>
     <a ui-sref="profile"> User profile </a>
-  <div ui-view></div>
+    <div ui-view="navbar"></div>
+  <div ui-view="content"></div>
 
 
  <!--build:js main.js -->
@@ -29,6 +30,7 @@
  <script src="./profile/profile.controller.js"></script>
  <script src="./profile/profile.main.js"></script>
  <script src="./login/login.controller.js"></script>
+ <script src="./navbar/navbar.controller.js"></script>
  <!-- endbuild -->
 </body>
 </html>
