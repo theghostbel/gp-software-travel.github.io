@@ -10,8 +10,7 @@
 
         function loginController($scope, $state){
             var vm = this;
-            $scope.greeting = 'Hi! I am a content view.';
-
+            //$scope.greeting = 'Hi! I am a content view.';
         }
 
 })();
