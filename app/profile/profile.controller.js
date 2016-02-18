@@ -26,6 +26,8 @@
       }, 2000);
 
       profileService.setUser(vm.user).then(successCallbackPut, errorCallback);
+
+      $('.collapsible-body').hide();
     }
 
     function successCallbackGet(response) {
@@ -46,7 +48,6 @@
           $('.collapsible').collapsible({
               accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
           });
-      //$(".button-collapse").sideNav();
 
   }
 })();
