@@ -53,3 +53,66 @@ form{
 form button{
 	margin-top:20px;
 }
+nav a.button-collapse{
+	display: block;
+}
+nav a.button-collapse i {
+	height: 64px;
+	line-height: 64px;
+	background-image: url("../hambuger-menu.png");
+}
+.side-nav li {
+	text-align: left;
+	border-bottom: 1px solid #E6E6E6;
+}
+.side-nav a {
+	position: relative;
+	font-size: 20px;
+}
+.side-nav a .menu-icon{
+	display: inline-block;
+	position: absolute;
+	top: 4px;
+	right: 30px;
+}
+nav ul a:hover, nav ul li.active {
+	background-color: rgba(30,136,229,.6);
+	color: white;
+}
+.side-nav li.active, .side-nav li:hover {
+	background-color: rgba(30,136,229,.6); 
+}
+.login-message{
+	margin-top: 50px;
+	font-size: 25px;
+}
+.login-btn{
+	margin-top: 120px;
+}
+nav .side-nav li:first-child{
+	line-height: 0;
+	padding-bottom: 10px;	
+	padding-top: 10px;
+}
+nav .side-nav li:first-child:hover{
+	background-color:rgba(30,136,229,1);
+}
+
+.side-nav img{
+	width: 70px;
+	border-radius: 50%;
+	margin-left: 10px;
+}
+.side-nav li:first-child span{
+	color: black;
+	position: absolute;
+	top: 30px;
+	left: 133px;
+}
+.side-nav li:hover:first-child span{
+	color:white;
+}
+.side-nav li:first-child span:last-child{
+	top: 60px;
+	left: 122px;
+}
