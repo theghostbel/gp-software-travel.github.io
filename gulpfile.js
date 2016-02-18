@@ -92,7 +92,7 @@ gulp.task('browser-sync', ['default'], function () {
 gulp.task('image-put', function () {
   return gulp.src('app/**/*.png')
     .pipe(imageResize({ 
-      width : 64,
+      width : 48,
       height : 64,
       crop : true,
       upscale : true

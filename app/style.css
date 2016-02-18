@@ -55,12 +55,13 @@ form button{
 }
 nav a.button-collapse{
 	display: block;
+	padding: 0 5px;
 }
-nav a.button-collapse i {
+/*nav a.button-collapse i {
 	height: 64px;
 	line-height: 64px;
 	background-image: url("./hambuger-menu.png");
-}
+}*/
 .side-nav li {
 	text-align: left;
 	border-bottom: 1px solid #E6E6E6;
