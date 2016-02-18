@@ -24,7 +24,8 @@
             views: {
               'navbar@': {
                 templateUrl: 'navbar/navbar.html',
-                controller: 'NavbarController'
+                controller: 'NavbarController',
+                controllerAs: 'nav'
               },
               'content@': {
                 templateUrl: 'profile/profile.html',

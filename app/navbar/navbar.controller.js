@@ -3,16 +3,27 @@
  */
 ;
 (function() {
-    'use strict';
+  'use strict';
 
-    angular.module('gpApp')
-        .controller('NavbarController', NavbarController);
+  angular.module('gpApp')
+    .controller('NavbarController', NavbarController);
 
-        function NavbarController($scope, $state){
-            var vm = this;
+  function NavbarController($scope, $state, profileService) {
+    var vm = this;
 
-            $(".button-collapse").sideNav();
+    $(".button-collapse").sideNav();
 
-        }
+    profileService.getUser().then(successCallbackGet, errorCallback);
+
+    function successCallbackGet(response) {
+      vm.user = response.data;
+      console.log('successCallbackGet:', vm.user);
+    }
+
+    function errorCallback(response) {
+      return "Error: " + response.status + " " + response.statusText;
+    }
+
+  }
 
 })();
