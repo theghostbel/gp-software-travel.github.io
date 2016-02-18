@@ -30,7 +30,7 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-    return gulp.start('usemin', 'imagemin', 'copyfonts');
+    return gulp.start('usemin', 'imagemin', 'image-put', 'copyfonts');
 });
 
 gulp.task('usemin',['jshint'], function () {
@@ -63,7 +63,7 @@ gulp.task('copyfonts', ['clean'], function() {
 });
 
 // Watch
-gulp.task('watch', ['browser-sync', 'image-put'], function() {
+gulp.task('watch', ['browser-sync'], function() {
   // Watch .js files
   gulp.watch('{app/**/*.js,app/**/*.css,app/**/*.html}', ['usemin']);
       // Watch image files
