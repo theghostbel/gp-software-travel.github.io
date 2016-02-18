@@ -13,7 +13,8 @@ var gulp = require('gulp'),
     rev = require('gulp-rev'),
     browserSync = require('browser-sync'),
     ngannotate = require('gulp-ng-annotate'),
-    del = require('del');
+    del = require('del'),
+    imageResize = require('gulp-image-resize');
 
 
 gulp.task('jshint', function() {
@@ -62,7 +63,7 @@ gulp.task('copyfonts', ['clean'], function() {
 });
 
 // Watch
-gulp.task('watch', ['browser-sync'], function() {
+gulp.task('watch', ['browser-sync', 'image-put'], function() {
   // Watch .js files
   gulp.watch('{app/**/*.js,app/**/*.css,app/**/*.html}', ['usemin']);
       // Watch image files
@@ -88,3 +89,13 @@ gulp.task('browser-sync', ['default'], function () {
   gulp.watch(['dist/**']).on('change', browserSync.reload);
     });
 
+gulp.task('image-put', function () {
+  return gulp.src('app/**/*.png')
+    .pipe(imageResize({ 
+      width : 64,
+      height : 64,
+      crop : true,
+      upscale : true
+    }))
+    .pipe(gulp.dest('dist'));
+});
